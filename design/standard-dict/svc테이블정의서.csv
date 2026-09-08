@@ -1,0 +1,44 @@
+﻿테이블 물리명,테이블 논리명,순서,칼럼 논리명,칼럼 물리명,저장형식,키,참조 대상,필수,비고
+svc.config,설정,1,설정식별자,stng_idntfr,bigint,PK,,필수,
+svc.config,설정,2,허용오타횟수,prm_typo_nmtm,smallint,,,,
+svc.config,설정,3,후보상한,cand_uplmt,smallint,,,,
+svc.config,설정,4,페이지크기,page_sz,smallint,,,,
+svc.config,설정,5,적용일시,aply_dt,timestamptz,,,,
+svc.request,정제요청,1,요청식별자,dmnd_idntfr,bigint,PK,,필수,
+svc.request,정제요청,2,주소값,addr_vl,text,,,,
+svc.request,정제요청,3,원본요청,orgnl_dmnd,jsonb,,,,감사 기록. 조회하지 않는다
+svc.request,정제요청,4,전략구분,strtg_se,varchar(1),,,,
+svc.request,정제요청,5,설정식별자,stng_idntfr,bigint,FK,svc.config,,
+svc.request,정제요청,6,접수일시,rcpt_dt,timestamptz,,,,
+svc.result,정제결과,1,요청식별자,dmnd_idntfr,bigint,PK · FK,svc.request,필수,
+svc.result,정제결과,2,건물관리번호,bldg_mng_no,varchar(25),,,,
+svc.result,정제결과,3,확정동,cfmtn_blk,varchar(50),,,,값 복사. 상세위치를 참조하지 않는다
+svc.result,정제결과,4,확정층,cfmtn_flr,varchar(50),,,,값 복사
+svc.result,정제결과,5,확정호,cfmtn_ho,varchar(50),,,,값 복사
+svc.result,정제결과,6,건물판정,bldg_jgmt,varchar(1),,,,
+svc.result,정제결과,7,상세판정,daddr_jgmt,varchar(1),,,,
+svc.result,정제결과,8,사유코드,rsn_cd,varchar(30),,,,
+svc.result_dropped,버린조각,1,요청식별자,dmnd_idntfr,bigint,PK · FK,svc.result,필수,
+svc.result_dropped,버린조각,2,버린조각순번,unsd_tkn_sn,smallint,PK,,필수,
+svc.result_dropped,버린조각,3,버린조각값,unsd_tkn,text,,,,NOT NULL
+svc.legacy_map,옛주소대응,1,옛표기,bfr_mark,varchar(200),PK,,필수,
+svc.legacy_map,옛주소대응,2,도로명주소관리번호,road_nm_addr_mng_no,varchar(26),PK,,필수,
+svc.legacy_map,옛주소대응,3,규명출처,idnty_src,varchar(1),,,,
+svc.legacy_map,옛주소대응,4,규명일시,idnty_dt,timestamptz,,,,DEFAULT now()
+svc.load_run,적재실행,1,적재실행식별자,load_excn_idntfr,bigint,PK,,필수,
+svc.load_run,적재실행,2,배치구분,btch_se,varchar(1),,,,
+svc.load_run,적재실행,3,자료연월,data_ym,varchar(6),,,,
+svc.load_run,적재실행,4,자료구분,data_se,varchar(1),,,,
+svc.load_run,적재실행,5,호출구분,clot_se,varchar(1),,,,
+svc.load_run,적재실행,6,시작일시,bgng_dt,timestamptz,,,,
+svc.load_run,적재실행,7,종료일시,end_dt,timestamptz,,,,
+svc.load_run,적재실행,8,실행결과,excn_rslt,varchar(1),,,,시작할 때 「도는중」으로 넣고 끝날 때 갱신한다
+svc.load_file,적재파일,1,적재실행식별자,load_excn_idntfr,bigint,PK · FK,svc.load_run,필수,
+svc.load_file,적재파일,2,원천파일명,sou_file_nm,varchar(50),PK,,필수,
+svc.load_file,적재파일,3,적재대상구분,load_trgt_se,varchar(1),,,,
+svc.load_file,적재파일,4,시도명,ctpv_nm,varchar(50),,,,전국 한 벌이면 빈다
+svc.load_file,적재파일,5,제외사유코드,excl_rsn_cd,varchar(10),,,,처리결과가 「제외」일 때만 찬다
+svc.load_file,적재파일,6,적재건수,load_nocs,integer,,,,
+svc.load_file,적재파일,7,시작일시,bgng_dt,timestamptz,,,,
+svc.load_file,적재파일,8,종료일시,end_dt,timestamptz,,,,
+svc.load_file,적재파일,9,처리결과,prcs_rslt,varchar(1),,,,

@@ -1,0 +1,259 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="컴포넌트 UML">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="주소정제 솔루션 — 컴포넌트 UML    정제 코어 안쪽 · 모듈 스물하나 · 바깥 여덟" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1B2A4A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="-70" width="1100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="읽는 법&#10;· 화살표는 부르는 방향이고, 이름표는 돌려주는 값이다&#10;· 실선 = 호출 &#160;·&#160; 파선 = 구현하거나 채워 두는 길&#10;· 사각형 = 모듈 &#160;·&#160; 파선 사각형 = 인터페이스 &#160;·&#160; 원통 = 저장소 &#160;·&#160; 평행사변형 = 바깥과 닿는 자리&#10;· 번호 ①~⑧은 정제 오케스트레이터가 부르는 차례다. 순서를 아는 자리는 여기 하나뿐이다&#10;· 옅은 파랑 상자는 포트다. 코어는 인터페이스만 알고 구현은 바깥에서 꽂는다" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="30" width="620" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gAPI" value="API 서비스" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#444444;dashed=1;dashPattern=8 6;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontSize=13;fontColor=#444444;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="900" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="gCORE" value="정제 코어" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#444444;dashed=1;dashPattern=8 6;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontSize=13;fontColor=#444444;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="340" width="1560" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="gSTEP" value="단계 — 정제 오케스트레이터가 차례로 부른다" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#888888;verticalAlign=top;align=left;spacingLeft=8;spacingTop=4;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="400" y="350" width="280" height="616" as="geometry" />
+        </mxCell>
+        <mxCell id="gBRANCH" value="갈래 — 같은 인터페이스의 구현 셋" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#888888;verticalAlign=top;align=left;spacingLeft=8;spacingTop=4;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="740" y="520" width="240" height="256" as="geometry" />
+        </mxCell>
+        <mxCell id="gPART" value="판정 부품" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#888888;verticalAlign=top;align=left;spacingLeft=8;spacingTop=4;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="520" width="240" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="gPORT" value="자원 포트" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#888888;verticalAlign=top;align=left;spacingLeft=8;spacingTop=4;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="520" width="240" height="280" as="geometry" />
+        </mxCell>
+
+        <mxCell id="req" value="외부 요청" style="shape=parallelogram;perimeter=parallelogramPerimeter;fixedSize=1;size=16;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="240" y="60" width="220" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="res" value="응답" style="shape=parallelogram;perimeter=parallelogramPerimeter;fixedSize=1;size=16;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="700" y="60" width="220" height="44" as="geometry" />
+        </mxCell>
+
+        <mxCell id="apiC" value="교정 진입점&#10;외부사 팝업 단건" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="190" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apiD" value="검출 진입점&#10;TMS 내부 · 엑셀 배치" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="190" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apiR" value="응답 조립기&#10;전략별 반환 모양" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="190" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" value="svc&#10;요청 · 결과" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=8;whiteSpace=wrap;html=1;fillColor=#F4F4F4;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="190" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="orch" value="정제 오케스트레이터&#10;&#10;순서를 아는&#10;유일한 자리&#10;&#10;전략값을&#10;값으로만 나른다" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=14;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="390" width="220" height="550" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1" value="파서" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="390" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="관문 — 주소인가" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="462" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="표기 가르기" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="534" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="«인터페이스» 갈래" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F7FB;strokeColor=#2B4C8C;dashed=1;dashPattern=6 4;fontColor=#2B4C8C;fontSize=13;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="420" y="606" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="행정동 판정 — 갈래 아님" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="678" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" value="합치기" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="750" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" value="실재 확인" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="822" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s8" value="응답 판정기 — 등급 · 사유" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="894" width="240" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1" value="도로명 갈래" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2B4C8C;fontColor=#1B2A4A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="560" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="지번 갈래" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2B4C8C;fontColor=#1B2A4A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="632" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="건물이름 갈래" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2B4C8C;fontColor=#1B2A4A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="704" width="200" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1" value="층 판정기&#10;허용 오타로 층 결과 두 값" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="560" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="후보 검색기&#10;자모 거리로 닮은 이름" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="660" width="200" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="t1" value="사전 조회 포트" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#2B4C8C;fontColor=#2B4C8C;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="560" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" value="참조 조회 포트" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#2B4C8C;fontColor=#2B4C8C;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="640" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" value="설정 포트" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#2B4C8C;fontColor=#2B4C8C;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="720" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="t4" value="옛주소 조회 포트 &#160;[미착수]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#2B4C8C;fontColor=#2B4C8C;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1000" width="280" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="x1" value="메모리 상주 사전 넷" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=8;whiteSpace=wrap;html=1;fillColor=#F4F4F4;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="1680" y="556" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x2" value="엔진 DB · ref" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=8;whiteSpace=wrap;html=1;fillColor=#F4F4F4;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="1680" y="636" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x3" value="svc.config" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=8;whiteSpace=wrap;html=1;fillColor=#F4F4F4;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="1680" y="716" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x4" value="어댑터 — 갈아끼우는 자리" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDF8EE;strokeColor=#8A6A2B;fontColor=#8A6A2B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1140" width="280" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="x5" value="카카오 검색 API" style="shape=parallelogram;perimeter=parallelogramPerimeter;fixedSize=1;size=16;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2B;fontSize=12;fontColor=#8A6A2B;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1225" width="240" height="44" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="req" target="apiC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="req" target="apiD">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="원문 · 전략값=교정" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="apiC" target="orch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="원문 여러 건 · 전략값=검출" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="apiD" target="orch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="판정 결과" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.95;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="orch" target="apiR">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="309" y="320" /><mxPoint x="810" y="320" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="apiR" target="res">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="기록" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8A8A8A;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=open;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="apiR" target="svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c1" value="① 조각 목록" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.047;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="② 주소인가" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.178;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="③ 성립하는 표기" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.309;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="④ 후보 집합" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.44;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="⑤ 판정 실패 · 사유&#10;(표기가 행정동일 때만)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.571;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="⑥ 건물 후보 · 버린 조각" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.702;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="⑦ 살아남은 후보 · 상세 확정 수준" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.833;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="s7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="⑧ 등급 · 사유" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.964;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="s8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i1" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2B4C8C;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.25;" edge="1" parent="1" source="b1" target="s4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="710" y="586" /><mxPoint x="710" y="619" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i2" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2B4C8C;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="b2" target="s4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="710" y="658" /><mxPoint x="710" y="632" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i3" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2B4C8C;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.75;" edge="1" parent="1" source="b3" target="s4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="690" y="730" /><mxPoint x="690" y="645" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="d1" value="조각 · 층 이름 → 층 결과" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="s1" target="p1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1180" y="416" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d2" value="계층 조회" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="b1" target="p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="이름 대조" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.8;" edge="1" parent="1" source="b3" target="p1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1020" y="730" /><mxPoint x="1020" y="602" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d4" value="후보 목록" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1" target="p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p2" target="t1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1300" y="686" /><mxPoint x="1300" y="586" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2" value="실재 판정" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="s7" target="t2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1320" y="848" /><mxPoint x="1320" y="666" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3" value="허용 오타" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1" target="t3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1340" y="599" /><mxPoint x="1340" y="746" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4" value="후보 상한 · 페이지 크기" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="s8" target="t3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1480" y="920" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r5" value="실재 확인 실패 → 옛주소인가 &#160;[미착수]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="t4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="210" y="1026" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="q1" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2B4C8C;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="t1" target="x1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q2" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2B4C8C;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="t2" target="x2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q3" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2B4C8C;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="t3" target="x3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q4" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8A6A2B;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#8A6A2B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="t4" target="x4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8A6A2B;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="x4" target="x5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q6" value="기동 시 적재" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8A8A8A;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=open;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="x2" target="x1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,118 @@
+﻿스키마,테이블 물리명,테이블 논리명,키,표준용어명(논리명),영문약어명(물리명),표준도메인명,저장형식,단어 조합,출처
+ref,ref.region,행정구역,PK,법정동코드,stdg_cd,코드V10,varchar(10),법정동 + 코드,공통표준용어
+ref,ref.region,행정구역,,상위법정동코드,up_stdg_cd,코드V10,varchar(10),상위 + 법정동 + 코드,표준단어 조합
+ref,ref.region,행정구역,,단계,stp,수N,smallint,단계,표준단어 조합
+ref,ref.region,행정구역,,행정구역명,admdst_nm,명V40,varchar(40),행정구역 + 명,공통표준용어
+ref,ref.lot,지번,PK,법정동코드,stdg_cd,코드V10,varchar(10),법정동 + 코드,공통표준용어
+ref,ref.lot,지번,PK,산여부,mtn_yn,여부V1,varchar(1),산 + 여부,공통표준용어
+ref,ref.lot,지번,PK,지번본번,mno,수N,smallint,본번,표준단어 조합
+ref,ref.lot,지번,PK,지번부번,sno,수N,smallint,부번,표준단어 조합
+ref,ref.address_lot,관련지번,PK,법정동코드,stdg_cd,코드V10,varchar(10),법정동 + 코드,공통표준용어
+ref,ref.address_lot,관련지번,PK,산여부,mtn_yn,여부V1,varchar(1),산 + 여부,공통표준용어
+ref,ref.address_lot,관련지번,PK,지번본번,mno,수N,smallint,본번,표준단어 조합
+ref,ref.address_lot,관련지번,PK,지번부번,sno,수N,smallint,부번,표준단어 조합
+ref,ref.address_lot,관련지번,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.address,주소자리,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.address,주소자리,,도로명코드,road_nm_cd,코드V12,varchar(12),도로 + 명 + 코드,공통표준용어
+ref,ref.address,주소자리,,지하여부,udgd_yn,여부V1,varchar(1),지하 + 여부,공통표준용어
+ref,ref.address,주소자리,,건물본번,bmno,수N,integer,건물본번,공통표준용어
+ref,ref.address,주소자리,,건물부번,bsno,수N,integer,건물부번,공통표준용어
+ref,ref.address,주소자리,,법정동코드,stdg_cd,코드V10,varchar(10),법정동 + 코드,공통표준용어
+ref,ref.address,주소자리,,기초구역번호,zip,번호V5,varchar(5),우편번호,표준단어 조합
+ref,ref.address,주소자리,,공동주택구분,aptcpx_se,구분V1,varchar(1),공동주택 + 구분,표준단어 조합
+ref,ref.address,주소자리,,효력발생일,efctn_ymd,일자D8,date,발효 + 일자,표준단어 조합
+ref,ref.unit_lookup,상세주소찾기,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.unit_lookup,상세주소찾기,PK,동명칭,blk_nm,명V50,varchar(50),동(棟) + 명,표준단어 조합
+ref,ref.unit_lookup,상세주소찾기,PK,층명칭,flr_nm,명V50,varchar(50),층 + 명,표준단어 조합
+ref,ref.unit_lookup,상세주소찾기,PK,호명칭,ho_nm,명V50,varchar(50),호 + 명,표준단어 조합
+ref,ref.unit_lookup,상세주소찾기,PK,지하구분,udgd_se,구분V1,varchar(1),지하 + 구분,표준단어 조합
+ref,ref.unit_lookup,상세주소찾기,,건물관리번호,bldg_mng_no,번호V25,varchar(25),건물 + 관리 + 번호,공통표준용어
+ref,ref.unit_lookup,상세주소찾기,,출처,src,구분V1,varchar(1),출처,표준단어 조합
+ref,ref.building,건물,PK,건물관리번호,bldg_mng_no,번호V25,varchar(25),건물 + 관리 + 번호,공통표준용어
+ref,ref.building,건물,,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.building,건물,,대표지번법정동코드,rprs_stdg_cd,코드V10,varchar(10),대표 + 법정동 + 코드,표준단어 조합
+ref,ref.building,건물,,대표지번산여부,rprs_mtn_yn,여부V1,varchar(1),대표 + 산 + 여부,표준단어 조합
+ref,ref.building,건물,,대표지번본번,rprs_mno,수N,smallint,대표 + 본번,표준단어 조합
+ref,ref.building,건물,,대표지번부번,rprs_sno,수N,smallint,대표 + 부번,표준단어 조합
+ref,ref.building,건물,,건축물대장건물명,bdrg_bldg_nm,명V40,varchar(40),건축물대장 + 건물 + 명,공통표준용어
+ref,ref.building,건물,,상세건물명,dtl_bldg_nm,명V100,varchar(100),상세 + 건물 + 명,공통표준용어
+ref,ref.building,건물,,시군구용건물명,sgg_bldg_nm,명V40,varchar(40),시군구 + 건물 + 명,표준단어 조합
+ref,ref.building,건물,,공동주택여부,aptcpx_yn,여부V1,varchar(1),공동주택 + 여부,공통표준용어
+ref,ref.building,건물,,행정동명,dong_nm,명V40,varchar(40),행정동 + 명,공통표준용어
+ref,ref.building,건물,,상태,stts,구분V1,varchar(1),상태,표준단어 조합
+ref,ref.unit,상세위치,PK,출처,src,구분V1,varchar(1),출처,표준단어 조합
+ref,ref.unit,상세위치,PK,시군구코드,sgg_cd,코드V5,varchar(5),시군구 + 코드,표준단어 조합
+ref,ref.unit,상세위치,PK,동일련번호,blk_sn,일련번호N,bigint,동(棟) + 일련번호,표준단어 조합
+ref,ref.unit,상세위치,PK,층일련번호,flr_sn,일련번호N,bigint,층 + 일련번호,공통표준용어
+ref,ref.unit,상세위치,PK,호일련번호,ho_sn,일련번호N,bigint,호 + 일련번호,표준단어 조합
+ref,ref.unit,상세위치,PK,호접미사일련번호,ho_sfx_sn,일련번호N,bigint,호 + 접미사 + 일련번호,표준단어 조합
+ref,ref.unit,상세위치,,동명칭,blk_nm,명V50,varchar(50),동(棟) + 명,표준단어 조합
+ref,ref.unit,상세위치,,층명칭,flr_nm,명V50,varchar(50),층 + 명,표준단어 조합
+ref,ref.unit,상세위치,,호명칭,ho_nm,명V50,varchar(50),호 + 명,표준단어 조합
+ref,ref.unit,상세위치,,지하구분,udgd_se,구분V1,varchar(1),지하 + 구분,표준단어 조합
+ref,ref.unit,상세위치,,건물관리번호,bldg_mng_no,번호V25,varchar(25),건물 + 관리 + 번호,공통표준용어
+ref,ref.road,도로명,PK,도로명코드,road_nm_cd,코드V12,varchar(12),도로 + 명 + 코드,공통표준용어
+ref,ref.road,도로명,,도로명,road_nm,명V80,varchar(80),도로 + 명,공통표준용어
+ref,ref.road,도로명,,상위도로명번호,up_road_nm_no,번호V7,varchar(7),상위 + 도로 + 명 + 번호,표준단어 조합
+ref,ref.road,도로명,,사용여부,use_yn,여부V1,varchar(1),사용 + 여부,공통표준용어
+ref,ref.road_emd,도로명읍면동,PK,도로명코드,road_nm_cd,코드V12,varchar(12),도로 + 명 + 코드,공통표준용어
+ref,ref.road_emd,도로명읍면동,PK,읍면동일련번호,emd_sn,일련번호V2,varchar(2),읍면동 + 일련번호,공통표준용어
+ref,ref.road_emd,도로명읍면동,,읍면동코드,emd_cd,코드V3,varchar(3),읍면동 + 코드,표준단어 조합
+ref,ref.road_emd,도로명읍면동,,읍면동구분,emd_se,구분V1,varchar(1),읍면동 + 구분,표준단어 조합
+ref,ref.road_emd,도로명읍면동,,고시일자,ancmnt_ymd,일자D8,date,고시 + 일자,공통표준용어
+ref,ref.token,주소표기,PK,토큰,tkn,명V100,varchar(100),토큰,표준단어 조합
+ref,ref.token,주소표기,PK,토큰구분,tkn_se,구분V1,varchar(1),토큰 + 구분,표준단어 조합
+svc,svc.config,설정,PK,설정식별자,stng_idntfr,식별자N,bigint,설정 + 식별자,표준단어 조합
+svc,svc.config,설정,,허용오타횟수,prm_typo_nmtm,수N,smallint,허용 + 오타 + 횟수,표준단어 조합
+svc,svc.config,설정,,후보상한,cand_uplmt,수N,smallint,후보 + 상한,표준단어 조합
+svc,svc.config,설정,,페이지크기,page_sz,수N,smallint,쪽 + 크기,표준단어 조합
+svc,svc.config,설정,,적용일시,aply_dt,일시D,timestamptz,신청 + 일시,공통표준용어
+svc,svc.request,정제요청,PK,요청식별자,dmnd_idntfr,식별자N,bigint,요청 + 식별자,표준단어 조합
+svc,svc.request,정제요청,,주소값,addr_vl,내용T,text,주소 + 값,표준단어 조합
+svc,svc.request,정제요청,,원본요청,orgnl_dmnd,문서J,jsonb,원본 + 요청,표준단어 조합
+svc,svc.request,정제요청,,전략구분,strtg_se,구분V1,varchar(1),전략 + 구분,표준단어 조합
+svc,svc.request,정제요청,FK,설정식별자,stng_idntfr,식별자N,bigint,설정 + 식별자,표준단어 조합
+svc,svc.request,정제요청,,접수일시,rcpt_dt,일시D,timestamptz,접수 + 일시,공통표준용어
+svc,svc.result,정제결과,PK,요청식별자,dmnd_idntfr,식별자N,bigint,요청 + 식별자,표준단어 조합
+svc,svc.result,정제결과,,건물관리번호,bldg_mng_no,번호V25,varchar(25),건물 + 관리 + 번호,공통표준용어
+svc,svc.result,정제결과,,확정동,cfmtn_blk,명V50,varchar(50),확정 + 동(棟),표준단어 조합
+svc,svc.result,정제결과,,확정층,cfmtn_flr,명V50,varchar(50),확정 + 층,표준단어 조합
+svc,svc.result,정제결과,,확정호,cfmtn_ho,명V50,varchar(50),확정 + 호,표준단어 조합
+svc,svc.result,정제결과,,건물판정,bldg_jgmt,구분V1,varchar(1),건물 + 판정,표준단어 조합
+svc,svc.result,정제결과,,상세판정,daddr_jgmt,구분V1,varchar(1),상세주소 + 판정,표준단어 조합
+svc,svc.result,정제결과,,사유코드,rsn_cd,코드V30,varchar(30),사유 + 코드,표준단어 조합
+svc,svc.result_dropped,버린조각,PK,요청식별자,dmnd_idntfr,식별자N,bigint,요청 + 식별자,표준단어 조합
+svc,svc.result_dropped,버린조각,PK,버린조각순번,unsd_tkn_sn,순번N,smallint,미사용 + 토큰 + 일련번호,표준단어 조합
+svc,svc.result_dropped,버린조각,,버린조각값,unsd_tkn,내용T,text,미사용 + 토큰,표준단어 조합
+svc,svc.legacy_map,옛주소대응,PK,옛표기,bfr_mark,명V200,varchar(200),전 + 표기,표준단어 조합
+svc,svc.legacy_map,옛주소대응,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+svc,svc.legacy_map,옛주소대응,,규명출처,idnty_src,구분V1,varchar(1),확인 + 출처,표준단어 조합
+svc,svc.legacy_map,옛주소대응,,규명일시,idnty_dt,일시D,timestamptz,확인 + 일시,표준단어 조합
+ref,ref.name_map,이름대응,PK,단계,stp,수N,smallint,단계,표준단어 조합
+ref,ref.name_map,이름대응,PK,전명,bfr_nm,명V80,varchar(80),전 + 명,표준단어 조합
+ref,ref.name_map,이름대응,PK,대응코드,crsp_cd,코드V12,varchar(12),대응 + 코드,표준단어 조합
+ref,ref.name_map,이름대응,,현재명,now_nm,명V80,varchar(80),현재 + 명,표준단어 조합
+ref,ref.name_map,이름대응,,관측일자,obsrvn_ymd,일자D8,date,관측 + 일자,공통표준용어
+ref,ref.name_map,이름대응,,생성출처,crt_src,구분V1,varchar(1),생성 + 출처,표준단어 조합
+ref,ref.addr_map,자리대응,PK,전도로명주소관리번호,bfr_road_nm_addr_mng_no,번호V26,varchar(26),전 + 도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.addr_map,자리대응,,현재도로명주소관리번호,now_road_nm_addr_mng_no,번호V26,varchar(26),현재 + 도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.addr_map,자리대응,,건물관리번호,bldg_mng_no,번호V25,varchar(25),건물 + 관리 + 번호,공통표준용어
+ref,ref.addr_map,자리대응,,관측일자,obsrvn_ymd,일자D8,date,관측 + 일자,공통표준용어
+ref,ref.addr_map,자리대응,,생성출처,crt_src,구분V1,varchar(1),생성 + 출처,표준단어 조합
+svc,svc.load_run,적재실행,PK,적재실행식별자,load_excn_idntfr,식별자N,bigint,적재 + 실행 + 식별자,표준단어 조합
+svc,svc.load_run,적재실행,,배치구분,btch_se,구분V1,varchar(1),배치 + 구분,표준단어 조합
+svc,svc.load_run,적재실행,,자료연월,data_ym,연월V6,varchar(6),자료 + 연월,표준단어 조합
+svc,svc.load_run,적재실행,,자료구분,data_se,구분V1,varchar(1),자료 + 구분,표준단어 조합
+svc,svc.load_run,적재실행,,호출구분,clot_se,구분V1,varchar(1),호출 + 구분,표준단어 조합
+svc,svc.load_run,적재실행,,시작일시,bgng_dt,일시D,timestamptz,시작 + 일시,공통표준용어
+svc,svc.load_run,적재실행,,종료일시,end_dt,일시D,timestamptz,종료 + 일시,공통표준용어
+svc,svc.load_run,적재실행,,실행결과,excn_rslt,구분V1,varchar(1),실행 + 결과,표준단어 조합
+svc,svc.load_file,적재파일,PK · FK,적재실행식별자,load_excn_idntfr,식별자N,bigint,적재 + 실행 + 식별자,표준단어 조합
+svc,svc.load_file,적재파일,PK,원천파일명,sou_file_nm,명V50,varchar(50),원천 + 파일 + 명,표준단어 조합
+svc,svc.load_file,적재파일,,적재대상구분,load_trgt_se,구분V1,varchar(1),적재 + 대상 + 구분,표준단어 조합
+svc,svc.load_file,적재파일,,시도명,ctpv_nm,명V50,varchar(50),시도 + 명,공통표준용어
+svc,svc.load_file,적재파일,,제외사유코드,excl_rsn_cd,코드V10,varchar(10),제외 + 사유 + 코드,표준단어 조합
+svc,svc.load_file,적재파일,,적재건수,load_nocs,수N,integer,적재 + 건수,공통표준용어
+svc,svc.load_file,적재파일,,시작일시,bgng_dt,일시D,timestamptz,시작 + 일시,공통표준용어
+svc,svc.load_file,적재파일,,종료일시,end_dt,일시D,timestamptz,종료 + 일시,공통표준용어
+svc,svc.load_file,적재파일,,처리결과,prcs_rslt,구분V1,varchar(1),처리 + 결과,표준단어 조합
