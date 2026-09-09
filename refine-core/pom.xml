@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.address.refine.diagnostics</groupId>
+    <artifactId>address-refine-diagnostics</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>refine-core</artifactId>
+  <name>refine-core</name>
+  <description>
+    정제 로직. 단계 여덟, 정제 오케스트레이터, 정제 컨텍스트, 자원 포트 인터페이스가 여기 있다.
+    바깥 서비스 라이브러리를 여기 넣지 않는다. 카카오나 T맵을 쓰는 코드는 별도 빌드 단위가 받는다.
+    근거는 design/07-interface.md 2절 원칙 4와 3절 포트와 어댑터다.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

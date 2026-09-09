@@ -6,6 +6,7 @@
 *.csv  text eol=lf
 *.json text eol=lf
 *.py   text eol=lf
+*.xml  text eol=lf
 
 # ── 그림 ─────────────────────────────────────────────────────
 # .drawio는 좌표가 든 XML 덩어리다.
