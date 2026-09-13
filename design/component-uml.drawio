@@ -51,7 +51,7 @@
           <mxGeometry x="1010" y="190" width="200" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="orch" value="정제 오케스트레이터&#10;&#10;순서를 아는&#10;유일한 자리&#10;&#10;전략값을&#10;값으로만 나른다" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=14;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="orch" value="정제 오케스트레이터&#10;&#10;순서를 아는&#10;유일한 자리&#10;&#10;전략 value를&#10;값으로만 나른다" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2A4A;fontColor=#1B2A4A;fontSize=14;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="100" y="390" width="220" height="550" as="geometry" />
         </mxCell>
 
@@ -132,10 +132,10 @@
         <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="req" target="apiD">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e3" value="원문 · 전략값=교정" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="apiC" target="orch">
+        <mxCell id="e3" value="원문 · 전략 value=교정" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="apiC" target="orch">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e4" value="원문 여러 건 · 전략값=검출" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="apiD" target="orch">
+        <mxCell id="e4" value="원문 여러 건 · 전략 value=검출" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="apiD" target="orch">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e5" value="판정 결과" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.95;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="orch" target="apiR">

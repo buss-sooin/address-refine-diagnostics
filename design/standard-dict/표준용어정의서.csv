@@ -12,15 +12,15 @@ ref,ref.address_lot,관련지번,PK,산여부,mtn_yn,여부V1,varchar(1),산 + �
 ref,ref.address_lot,관련지번,PK,지번본번,mno,수N,smallint,본번,표준단어 조합
 ref,ref.address_lot,관련지번,PK,지번부번,sno,수N,smallint,부번,표준단어 조합
 ref,ref.address_lot,관련지번,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
-ref,ref.address,주소자리,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
-ref,ref.address,주소자리,,도로명코드,road_nm_cd,코드V12,varchar(12),도로 + 명 + 코드,공통표준용어
-ref,ref.address,주소자리,,지하여부,udgd_yn,여부V1,varchar(1),지하 + 여부,공통표준용어
-ref,ref.address,주소자리,,건물본번,bmno,수N,integer,건물본번,공통표준용어
-ref,ref.address,주소자리,,건물부번,bsno,수N,integer,건물부번,공통표준용어
-ref,ref.address,주소자리,,법정동코드,stdg_cd,코드V10,varchar(10),법정동 + 코드,공통표준용어
-ref,ref.address,주소자리,,기초구역번호,zip,번호V5,varchar(5),우편번호,표준단어 조합
-ref,ref.address,주소자리,,공동주택구분,aptcpx_se,구분V1,varchar(1),공동주택 + 구분,표준단어 조합
-ref,ref.address,주소자리,,효력발생일,efctn_ymd,일자D8,date,발효 + 일자,표준단어 조합
+ref,ref.address,등록주소,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.address,등록주소,,도로명코드,road_nm_cd,코드V12,varchar(12),도로 + 명 + 코드,공통표준용어
+ref,ref.address,등록주소,,지하여부,udgd_yn,여부V1,varchar(1),지하 + 여부,공통표준용어
+ref,ref.address,등록주소,,건물본번,bmno,수N,integer,건물본번,공통표준용어
+ref,ref.address,등록주소,,건물부번,bsno,수N,integer,건물부번,공통표준용어
+ref,ref.address,등록주소,,법정동코드,stdg_cd,코드V10,varchar(10),법정동 + 코드,공통표준용어
+ref,ref.address,등록주소,,기초구역번호,zip,번호V5,varchar(5),우편번호,표준단어 조합
+ref,ref.address,등록주소,,공동주택구분,aptcpx_se,구분V1,varchar(1),공동주택 + 구분,표준단어 조합
+ref,ref.address,등록주소,,효력발생일,efctn_ymd,일자D8,date,발효 + 일자,표준단어 조합
 ref,ref.unit_lookup,상세주소찾기,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
 ref,ref.unit_lookup,상세주소찾기,PK,동명칭,blk_nm,명V50,varchar(50),동(棟) + 명,표준단어 조합
 ref,ref.unit_lookup,상세주소찾기,PK,층명칭,flr_nm,명V50,varchar(50),층 + 명,표준단어 조합
@@ -94,11 +94,11 @@ ref,ref.name_map,이름대응,PK,대응코드,crsp_cd,코드V12,varchar(12),대�
 ref,ref.name_map,이름대응,,현재명,now_nm,명V80,varchar(80),현재 + 명,표준단어 조합
 ref,ref.name_map,이름대응,,관측일자,obsrvn_ymd,일자D8,date,관측 + 일자,공통표준용어
 ref,ref.name_map,이름대응,,생성출처,crt_src,구분V1,varchar(1),생성 + 출처,표준단어 조합
-ref,ref.addr_map,자리대응,PK,전도로명주소관리번호,bfr_road_nm_addr_mng_no,번호V26,varchar(26),전 + 도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
-ref,ref.addr_map,자리대응,,현재도로명주소관리번호,now_road_nm_addr_mng_no,번호V26,varchar(26),현재 + 도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
-ref,ref.addr_map,자리대응,,건물관리번호,bldg_mng_no,번호V25,varchar(25),건물 + 관리 + 번호,공통표준용어
-ref,ref.addr_map,자리대응,,관측일자,obsrvn_ymd,일자D8,date,관측 + 일자,공통표준용어
-ref,ref.addr_map,자리대응,,생성출처,crt_src,구분V1,varchar(1),생성 + 출처,표준단어 조합
+ref,ref.addr_map,주소대응,PK,전도로명주소관리번호,bfr_road_nm_addr_mng_no,번호V26,varchar(26),전 + 도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.addr_map,주소대응,,현재도로명주소관리번호,now_road_nm_addr_mng_no,번호V26,varchar(26),현재 + 도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
+ref,ref.addr_map,주소대응,,건물관리번호,bldg_mng_no,번호V25,varchar(25),건물 + 관리 + 번호,공통표준용어
+ref,ref.addr_map,주소대응,,관측일자,obsrvn_ymd,일자D8,date,관측 + 일자,공통표준용어
+ref,ref.addr_map,주소대응,,생성출처,crt_src,구분V1,varchar(1),생성 + 출처,표준단어 조합
 svc,svc.load_run,적재실행,PK,적재실행식별자,load_excn_idntfr,식별자N,bigint,적재 + 실행 + 식별자,표준단어 조합
 svc,svc.load_run,적재실행,,배치구분,btch_se,구분V1,varchar(1),배치 + 구분,표준단어 조합
 svc,svc.load_run,적재실행,,자료연월,data_ym,연월V6,varchar(6),자료 + 연월,표준단어 조합

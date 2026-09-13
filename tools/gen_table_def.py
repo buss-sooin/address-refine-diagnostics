@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""ref·svc 테이블 정의서와 색인 정의서를 찍는다. gen_std_dict.py의 재료를 그대로 쓴다."""
+"""ref·svc 테이블 정의서와 인덱스 정의서를 찍는다. gen_std_dict.py의 재료를 그대로 쓴다."""
 import csv, os, importlib.util
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)   # 저장소 뿌리
@@ -19,7 +19,7 @@ NOTE = {
  ('svc.legacy_map','idnty_dt'): 'DEFAULT now()',
  ('svc.request','orgnl_dmnd'): '감사 기록. 조회하지 않는다',
  ('svc.load_run','excn_rslt'): '시작할 때 「도는중」으로 넣고 끝날 때 갱신한다',
- ('svc.load_file','ctpv_nm'): '전국 한 벌이면 빈다',
+ ('svc.load_file','ctpv_nm'): '전국 파일 한 세트면 빈다',
  ('svc.load_file','excl_rsn_cd'): '처리결과가 「제외」일 때만 찬다',
 }
 FK = {
@@ -30,19 +30,19 @@ FK = {
 }
 
 INDEX = [
- ('ix_address_road4','ref.address','road_nm_cd, udgd_yn, bmno, bsno','stdg_cd','4칸 묶음 조회 · 역조회','유일 색인으로 걸지 않는다. 전국 10건이 겹친다'),
+ ('ix_address_road4','ref.address','road_nm_cd, udgd_yn, bmno, bsno','stdg_cd','4칸 묶음 조회 · 역조회','유일 인덱스로 걸지 않는다. 전국 10건이 겹친다'),
  ('ix_address_stdg','ref.address','stdg_cd','','시군구로 좁히기',''),
- ('ix_building_addr','ref.building','road_nm_addr_mng_no','','주소자리 → 건물 목록',''),
+ ('ix_building_addr','ref.building','road_nm_addr_mng_no','','등록주소 → 건물 목록',''),
  ('ix_building_replot','ref.building','rprs_stdg_cd, rprs_mtn_yn, rprs_mno, rprs_sno','','대표지번 갈래',''),
- ('pk_address_lot','ref.address_lot','기본키','','관련지번 갈래','별도 색인이 필요 없다'),
+ ('pk_address_lot','ref.address_lot','기본키','','관련지번 갈래','별도 인덱스가 필요 없다'),
  ('pk_unit_lookup','ref.unit_lookup','기본키','','동·층·호 조회 · 자리 단위 삭제',''),
  ('ix_unit_bldg','ref.unit','bldg_mng_no','','건물 → 상세위치',''),
  ('ix_token_se','ref.token','tkn_se, tkn','','사전 적재',''),
  ('pk_addr_map','ref.addr_map','기본키','','옛 자리 → 새 자리','실재 확인이 후보를 다 지운 뒤에만 친다'),
  ('ix_name_map_cd','ref.name_map','crsp_cd','','대응 비교가 코드로 기존 줄을 찾는다','옛 이름 조회는 메모리 사전이 받는다'),
- ('ix_token_prefix','ref.token','tkn varchar_pattern_ops','','접두사 비교',"기본 색인은 LIKE '강남%'를 안 탄다. 콜레이션 때문이다"),
- ('(색인)','svc.load_run','기본키','','실행 조회','더 만들지 않는다. 하루 한 줄이라 스캔이 싸다'),
- ('(부분 색인)','ref.building',"WHERE stts = '0'",'','유효 건물만','만들지 않는다. 폐지 비율을 재기 전까지는 값이 안 나온다'),
+ ('ix_token_prefix','ref.token','tkn varchar_pattern_ops','','접두사 비교',"기본 인덱스는 LIKE '강남%'를 안 탄다. 콜레이션 때문이다"),
+ ('(인덱스)','svc.load_run','기본키','','실행 조회','더 만들지 않는다. 하루 한 줄이라 스캔이 싸다'),
+ ('(부분 인덱스)','ref.building',"WHERE stts = '0'",'','유효 건물만','만들지 않는다. 폐지 비율을 재기 전까지는 값이 안 나온다'),
 ]
 
 CONSTRAINT = [
@@ -74,12 +74,12 @@ def main():
                 ['테이블 물리명','테이블 논리명','순서','칼럼 논리명','칼럼 물리명',
                  '저장형식','키','참조 대상','필수','비고'], out)
         print(f'{sch}: 테이블 {len(set(x[0] for x in out))} · 칼럼 {len(out)}')
-    g.write('색인정의서.csv',
-            ['색인명','테이블','칼럼','INCLUDE','무엇을 받나','비고'],
+    g.write('인덱스정의서.csv',
+            ['인덱스명','테이블','칼럼','INCLUDE','무엇을 받나','비고'],
             [list(x) for x in INDEX])
     g.write('제약정의서.csv',
             ['대상','종류','건다/안 건다','근거'], [list(x) for x in CONSTRAINT])
-    print(f'색인 {len(INDEX)} · 제약 {len(CONSTRAINT)}')
+    print(f'인덱스 {len(INDEX)} · 제약 {len(CONSTRAINT)}')
 
 if __name__ == '__main__':
     main()

@@ -36,7 +36,7 @@ svc.load_run,적재실행,8,실행결과,excn_rslt,varchar(1),,,,시작할 때 �
 svc.load_file,적재파일,1,적재실행식별자,load_excn_idntfr,bigint,PK · FK,svc.load_run,필수,
 svc.load_file,적재파일,2,원천파일명,sou_file_nm,varchar(50),PK,,필수,
 svc.load_file,적재파일,3,적재대상구분,load_trgt_se,varchar(1),,,,
-svc.load_file,적재파일,4,시도명,ctpv_nm,varchar(50),,,,전국 한 벌이면 빈다
+svc.load_file,적재파일,4,시도명,ctpv_nm,varchar(50),,,,전국 파일 한 세트면 빈다
 svc.load_file,적재파일,5,제외사유코드,excl_rsn_cd,varchar(10),,,,처리결과가 「제외」일 때만 찬다
 svc.load_file,적재파일,6,적재건수,load_nocs,integer,,,,
 svc.load_file,적재파일,7,시작일시,bgng_dt,timestamptz,,,,
