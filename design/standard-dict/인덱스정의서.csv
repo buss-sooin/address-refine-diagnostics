@@ -12,3 +12,4 @@ ix_name_map_cd,ref.name_map,crsp_cd,,대응 비교가 코드로 기존 줄을 �
 ix_token_prefix,ref.token,tkn varchar_pattern_ops,,접두사 비교,기본 인덱스는 LIKE '강남%'를 안 탄다. 콜레이션 때문이다
 (인덱스),svc.load_run,기본키,,실행 조회,더 만들지 않는다. 하루 한 줄이라 스캔이 싸다
 (부분 인덱스),ref.building,WHERE stts = '0',,유효 건물만,만들지 않는다. 폐지 비율을 재기 전까지는 값이 안 나온다
+(부분 인덱스),ref.address,WHERE stts = '0',,유효 등록주소만,만들지 않는다. ref.building과 같은 시점에 함께 잰다
