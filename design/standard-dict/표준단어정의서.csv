@@ -20,7 +20,7 @@
 적재,Load,LOAD,공통표준단어,,4,
 대표,Representation,RPRS,공통표준단어,,4,
 토큰,Token,TKN,공통표준단어,,4,
-일자,YEAR Month Day,YMD,공통표준단어,연월일,4,
+일자,YEAR Month Day,YMD,공통표준단어,연월일,7,
 전,Before,BFR,프로젝트 신규,,3,등재 없음. 표준단어 「이전 = BFR」의 축약을 빌린다
 확정,Confirmation,CFMTN,공통표준단어,,3,
 읍면동,Eup/Myun/Dong,EMD,공통표준단어,,3,
@@ -37,7 +37,7 @@
 확인,Identify,IDNTY,공통표준단어,,2,
 판정,Judgement,JGMT,공통표준단어,,2,
 현재,Now,NOW,공통표준단어,,2,
-관측,Observation,OBSRVN,공통표준단어,,2,
+관측,Observation,OBSRVN,공통표준단어,,5,
 결과,Result,RSLT,공통표준단어,,2,
 사유,Reason,RSN,공통표준단어,내용,2,
 시군구,Si/Gun/Gu,SGG,공통표준단어,,2,
@@ -73,7 +73,7 @@
 접미사,Suffix,SFX,프로젝트 신규,,1,등재 없음. 영어 관용 축약을 쓴다
 원천,Source,SOU,공통표준단어,,1,
 전략,Strategy,STRTG,공통표준단어,,1,
-상태,Status,STTS,공통표준단어,,1,
+상태,Status,STTS,공통표준단어,,2,
 크기,Size,SZ,공통표준단어,수,1,
 대상,Target,TRGT,공통표준단어,,1,
 오타,Typographical Error,TYPO,프로젝트 신규,,1,"등재 없음. 표준 3,284개에서 TYPO는 비어 있다"
@@ -82,3 +82,4 @@
 값,Value,VL,공통표준단어,,1,
 연월,Year and Month,YM,공통표준단어,연월,1,
 우편번호,Zip Code,ZIP,공통표준단어,우편번호,1,
+폐지,Abolition,ABL,공통표준단어,,3,

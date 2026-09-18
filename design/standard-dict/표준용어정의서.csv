@@ -21,6 +21,8 @@ ref,ref.address,등록주소,,법정동코드,stdg_cd,코드V10,varchar(10),법�
 ref,ref.address,등록주소,,기초구역번호,zip,번호V5,varchar(5),우편번호,표준단어 조합
 ref,ref.address,등록주소,,공동주택구분,aptcpx_se,구분V1,varchar(1),공동주택 + 구분,표준단어 조합
 ref,ref.address,등록주소,,효력발생일,efctn_ymd,일자D8,date,발효 + 일자,표준단어 조합
+ref,ref.address,등록주소,,상태,stts,구분V1,varchar(1),상태,표준단어 조합
+ref,ref.address,등록주소,,폐지관측일자,abl_obsrvn_ymd,일자D8,date,폐지 + 관측 + 일자,표준단어 조합
 ref,ref.unit_lookup,상세주소찾기,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
 ref,ref.unit_lookup,상세주소찾기,PK,동명칭,blk_nm,명V50,varchar(50),동(棟) + 명,표준단어 조합
 ref,ref.unit_lookup,상세주소찾기,PK,층명칭,flr_nm,명V50,varchar(50),층 + 명,표준단어 조합
@@ -40,6 +42,7 @@ ref,ref.building,건물,,시군구용건물명,sgg_bldg_nm,명V40,varchar(40),�
 ref,ref.building,건물,,공동주택여부,aptcpx_yn,여부V1,varchar(1),공동주택 + 여부,공통표준용어
 ref,ref.building,건물,,행정동명,dong_nm,명V40,varchar(40),행정동 + 명,공통표준용어
 ref,ref.building,건물,,상태,stts,구분V1,varchar(1),상태,표준단어 조합
+ref,ref.building,건물,,폐지관측일자,abl_obsrvn_ymd,일자D8,date,폐지 + 관측 + 일자,표준단어 조합
 ref,ref.unit,상세위치,PK,출처,src,구분V1,varchar(1),출처,표준단어 조합
 ref,ref.unit,상세위치,PK,시군구코드,sgg_cd,코드V5,varchar(5),시군구 + 코드,표준단어 조합
 ref,ref.unit,상세위치,PK,동일련번호,blk_sn,일련번호N,bigint,동(棟) + 일련번호,표준단어 조합
@@ -55,6 +58,7 @@ ref,ref.road,도로명,PK,도로명코드,road_nm_cd,코드V12,varchar(12),도�
 ref,ref.road,도로명,,도로명,road_nm,명V80,varchar(80),도로 + 명,공통표준용어
 ref,ref.road,도로명,,상위도로명번호,up_road_nm_no,번호V7,varchar(7),상위 + 도로 + 명 + 번호,표준단어 조합
 ref,ref.road,도로명,,사용여부,use_yn,여부V1,varchar(1),사용 + 여부,공통표준용어
+ref,ref.road,도로명,,폐지관측일자,abl_obsrvn_ymd,일자D8,date,폐지 + 관측 + 일자,표준단어 조합
 ref,ref.road_emd,도로명읍면동,PK,도로명코드,road_nm_cd,코드V12,varchar(12),도로 + 명 + 코드,공통표준용어
 ref,ref.road_emd,도로명읍면동,PK,읍면동일련번호,emd_sn,일련번호V2,varchar(2),읍면동 + 일련번호,공통표준용어
 ref,ref.road_emd,도로명읍면동,,읍면동코드,emd_cd,코드V3,varchar(3),읍면동 + 코드,표준단어 조합

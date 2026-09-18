@@ -21,6 +21,8 @@ ref.address,등록주소,6,법정동코드,stdg_cd,varchar(10),,,,
 ref.address,등록주소,7,기초구역번호,zip,varchar(5),,,,
 ref.address,등록주소,8,공동주택구분,aptcpx_se,varchar(1),,,,
 ref.address,등록주소,9,효력발생일,efctn_ymd,date,,,,
+ref.address,등록주소,10,상태,stts,varchar(1),,,,우리가 만든다. 0 유효 · 1 폐지
+ref.address,등록주소,11,폐지관측일자,abl_obsrvn_ymd,date,,,,우리가 만든다. 폐지를 처음 관측한 날
 ref.unit_lookup,상세주소찾기,1,도로명주소관리번호,road_nm_addr_mng_no,varchar(26),PK,,필수,
 ref.unit_lookup,상세주소찾기,2,동명칭,blk_nm,varchar(50),PK,,필수,
 ref.unit_lookup,상세주소찾기,3,층명칭,flr_nm,varchar(50),PK,,필수,빈 값은 빈 문자열이다. NULL이 아니다. 기본키 칼럼이라 NULL을 못 받는다
@@ -40,6 +42,7 @@ ref.building,건물,9,시군구용건물명,sgg_bldg_nm,varchar(40),,,,
 ref.building,건물,10,공동주택여부,aptcpx_yn,varchar(1),,,,
 ref.building,건물,11,행정동명,dong_nm,varchar(40),,,,
 ref.building,건물,12,상태,stts,varchar(1),,,,
+ref.building,건물,13,폐지관측일자,abl_obsrvn_ymd,date,,,,우리가 만든다. 폐지를 처음 관측한 날
 ref.unit,상세위치,1,출처,src,varchar(1),PK,,필수,
 ref.unit,상세위치,2,시군구코드,sgg_cd,varchar(5),PK,,필수,
 ref.unit,상세위치,3,동일련번호,blk_sn,bigint,PK,,필수,
@@ -55,6 +58,7 @@ ref.road,도로명,1,도로명코드,road_nm_cd,varchar(12),PK,,필수,
 ref.road,도로명,2,도로명,road_nm,varchar(80),,,,
 ref.road,도로명,3,상위도로명번호,up_road_nm_no,varchar(7),,,,
 ref.road,도로명,4,사용여부,use_yn,varchar(1),,,,
+ref.road,도로명,5,폐지관측일자,abl_obsrvn_ymd,date,,,,우리가 만든다. 폐지를 처음 관측한 날
 ref.road_emd,도로명읍면동,1,도로명코드,road_nm_cd,varchar(12),PK,,필수,
 ref.road_emd,도로명읍면동,2,읍면동일련번호,emd_sn,varchar(2),PK,,필수,
 ref.road_emd,도로명읍면동,3,읍면동코드,emd_cd,varchar(3),,,,
