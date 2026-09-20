@@ -1,11 +1,5 @@
 # 설계3: 처리 흐름
 
-**답하는 질문: 들어온 주소를 어떤 차례로 처리하는가**
-
-상태: 흐름 전체 확정 · 단계별 역할 9가지 서술 완료 · 컴포넌트 UML 완료 · 인터페이스 정의서 완료 · 인덱스 기반 끊기 확정 · 옛 주소 대응 체계 확정
-
----
-
 ## 0. 전체 흐름
 
 ```
@@ -25,23 +19,6 @@
 `AddressBranch` 구현 3가지는 같은 인터페이스를 구현합니다. `RoadBranch`와 `LotBranch`와 `BuildingNameBranch`는 받는 값과 돌려주는 값이 같고 내부 처리만 다릅니다. 어느 구현으로 들어와도 마지막에는 건물 한 채를 가리키므로 ② `CandidateMerger`부터는 하나의 흐름으로 이어집니다. 원천 자료가 그런 구조이기 때문입니다. 건물정보 파일 한 줄에 도로명 값과 대표지번과 건물 이름 세 칼럼이 나란히 들어 있습니다.
 
 `AdminDongJudge`는 `AddressBranch` 구현이 아닙니다. 행정동과 법정동을 잇는 대응표가 없어서 찾지 못한다는 것이 이미 정해져 있으므로, 행정동 사전에 걸리는 순간 ④ `ResultGrader`로 바로 갑니다. ③ `ExistenceVerifier`를 거치지 않습니다.
-
-### 단계별 서술 진행 상태
-
-| 단계 | 상태 |
-|---|---|
-| ① `AddressParser` | 완료 |
-| `AddressGate` | 완료 |
-| `NotationClassifier` | 완료 |
-| `RoadBranch` | 완료 |
-| `LotBranch` | 완료 |
-| `BuildingNameBranch` | 완료 |
-| `AdminDongJudge` | 완료 |
-| ② `CandidateMerger` | 완료 |
-| ③ `ExistenceVerifier` | 완료. 확인 쿼리 형태만 물리 데이터 모델로 넘깁니다 |
-| ④ `ResultGrader` | 완료 |
-
-**서술 틀을 고정합니다.** 각 단계를 다섯 항목으로 씁니다. 받는 값, 하는 일, 돌려주는 값, 하지 않는 일, 다음 단계가 쓰는 것입니다. 마지막 항목이 단계와 단계를 잇는 부분입니다. 앞 단계가 무엇을 돌려줘야 하는지는 뒤 단계가 무엇을 필요로 하는지에서 나옵니다.
 
 ### 모듈 이름
 
@@ -698,7 +675,7 @@ RoadBranch   171-2
 | 건물 이름 | 이름 칼럼 3개 전부와 비교 (건축물대장 / 상세 / 시군구용) |
 | 행정동 | 대응표가 없어 찾지 못합니다. 실패로 처리하고 사유를 붙입니다 |
 
-등록주소를 가리키는 키는 도로명주소관리번호 26자리입니다. 4칼럼 복합 키는 전국 10건에서 두 읍면동이 겹쳐 구분되지 않습니다. 근거는 `06-source-schema.md` 「4칸 묶음은 유일하지 않습니다」에 있습니다. **찾을 때 쓰는 키로는 4칼럼 복합 키를 그대로 쓰고, 테이블끼리 서로를 가리키는 부분만 관리번호로 씁니다.**
+등록주소를 가리키는 키는 도로명주소관리번호 26자리입니다. 4칼럼 복합 키는 전국 10건에서 두 읍면동이 겹쳐 구분되지 않습니다. 근거는 `06-source-schema.md` 「4칼럼 복합 키는 유일하지 않습니다」에 있습니다. **찾을 때 쓰는 키로는 4칼럼 복합 키를 그대로 쓰고, 테이블끼리 서로를 가리키는 부분만 관리번호로 씁니다.**
 
 #### 지번으로 찾을 때 2곳을 함께 봅니다
 
@@ -815,8 +792,6 @@ AND 조건으로 결과가 0건이 되면 토큰별로 따로 찾은 결과를 �
 ### ③ `ExistenceVerifier`: 0-1절에 있습니다
 
 ### ④ 응답: 3절에 있습니다
-
----
 
 ## 3. 응답 5가지
 
@@ -1262,7 +1237,7 @@ AND 조건으로 결과가 0건이 되면 토큰별로 따로 찾은 결과를 �
 
 진행 상태를 보관해서 얻는 이득도 작습니다. 앞의 세 층은 메모리 상주 사전으로 처리하므로 다시 판단해도 DB를 조회하지 않습니다. 아낄 것이 애초에 적습니다.
 
-대신 치르는 비용은 동시 요청을 얼마나 감당하느냐입니다. 감당하지 못하면 그때 이 결정을 다시 검토합니다. 이 내용은 `status.md` 「착수 전 검증」에 남겼습니다.
+대신 치르는 비용은 동시 요청을 얼마나 감당하느냐입니다. 감당하지 못하면 그때 이 결정을 다시 검토합니다.
 
 ### 실행 방식은 Java Spring과 서블릿입니다
 
@@ -1732,93 +1707,3 @@ flowchart LR
 | 포트와 어댑터(Ports and Adapters) | 자원 포트 4개 | 바깥이 바뀌어도 코어를 고치지 않습니다 |
 
 `AddressBranch` 구현 3개와 `DictionarySearcher`는 인터페이스 모양이 같고 동작 방식이 반대입니다. `AddressBranch`는 구현을 전부 실행하고, `DictionarySearcher`는 구현 하나를 골라 씁니다. 두 패턴을 묶어 「인터페이스와 구현」으로만 적으면 `AddressBranch`에서 구현 하나만 고르는 코드가 나옵니다.
-
----
-
-## 부록. 확인에 쓴 명령
-
-### 옛 주소 대응 키 대조 (2026-08-31)
-
-도로명코드가 개편 뒤에도 유지되는지 확인한 명령입니다.
-
-```python
-def load(p):                                   # road_code_total.txt · MS949 · 파이프 구분
-    road={}; sido={}; sgg={}; emd={}
-    for line in open(p, encoding='cp949', errors='replace'):
-        c = line.rstrip('\r\n').split('|')     # 20칸
-        if len(c) < 20: continue
-        road[(c[0]+c[1], c[4])] = c[2]         # 도로명코드+읍면동일련번호 → 도로명
-        sido[c[0][:2]] = c[5]; sgg[c[0]] = c[6]
-        if c[8].strip(): emd[c[0]+c[8]] = c[9]
-    return road, sido, sgg, emd
-a = load('2024-08_source/full/building-db/road_code_total.txt')
-b = load('2026-07_source/full/building-db/road_code_total.txt')
-ch = [(k, a[0][k], b[0][k]) for k in a[0] if k in b[0] and a[0][k] != b[0][k]]
-print(sum(1 for k in a[0] if k[0][:2] in ('29','46') and k in b[0]))   # 생존 0
-```
-
-건물관리번호가 개편 뒤에도 유지되는지 확인한 명령입니다.
-
-```python
-def load(p):                                   # build_*.txt · 16번 칸이 건물관리번호 25
-    d = {}
-    for line in open(p, encoding='cp949', errors='replace'):
-        c = line.rstrip('\r\n').split('|')
-        if len(c) < 20: continue
-        d[c[15]] = (c[1], c[2], c[3], c[9], c[0])   # 시도·시군구·읍면동·도로명·법정동코드
-    return d
-old = load('2024-08_source/full/building-db/build_gwangju.txt')
-new = load('2026-07_source/full/building-db/build_jeonnamgwangju.txt')
-same = set(old) & set(new)                     # 162,888 / 165,019 = 98.7%
-from collections import Counter
-Counter((old[k][1], new[k][1]) for k in same if old[k][1] != new[k][1])   # 인천은 파일만 바꾼다
-```
-
-### 인덱스 기반 끊기 실측 (2026-08-31)
-
-인덱스를 만들고 겹침을 센 명령입니다.
-
-```python
-# 개선_도로명코드_전체분.txt 에서 시도·시군구·읍면동·도로명을,
-# rnaddrkor_*.txt 5·6번 칸에서 읍면동·리를 모은다
-MARK={"시도":["특별자치도","특별자치시","특별시","광역시","도"],
-      "시군구":["시","군","구"],"읍면동":["읍","면","동","가"],
-      "리":["리"],"도로명":["대로","로","길"]}
-for l,ns in layers:
-    for n in ns:
-        for m in MARK[l]:                      # 긴 단위 표기부터 뗀다
-            if n.endswith(m) and len(n)>len(m):
-                key=n[:-len(m)]; break
-        else: key=n                            # 단위 표기가 안 붙는 328개
-        idx[key.replace(" ","")].append((l,n,mark,n.replace(" ","")))
-```
-
-정답 가지 생존율을 잰 명령입니다.
-
-```python
-# 시도별 실주소 1,500건을 뽑아 시도·시군구 단위 표기를 지우고 공백을 없앤다
-s=(cut(sido,SIDO_MARK)+cut(sgg,SGG_MARK)+road+bno).replace(" ","")
-acc,bad=walk(s)                                # 완전 가지 · 미완 가지
-ps=acc or bad                                  # 규칙 5
-ok=any(sgg in names(p) and road in names(p) for p in ps)
-```
-
-문자열의 한 지점에서 후보 토큰을 내는 규칙입니다.
-
-```python
-def cands(s,i):
-    out=[]
-    for j in range(min(len(s),i+MAXK),i,-1):   # 긴 것부터
-        k=s[i:j]
-        if k not in idx: continue
-        eats=set()
-        if len(k)>1: eats.add(len(k))
-        elif any(l=="시군구" for l,n,m,ns in idx[k]): eats.add(1)   # 규칙 4
-        for l,n,m,ns in idx[k]:
-            if m and s.startswith(ns,i): eats.add(len(ns))          # 규칙 2
-        for e in sorted(eats,reverse=True): out.append((s[i:i+e],idx[k]))
-    return out
-# 숫자 자리에서도 위를 먼저 부르고, 안 걸릴 때만 숫자 덩어리로 읽는다   규칙 3
-```
-
-08-24·08-25·08-26 실측 명령은 `06-source-schema.md` 부록에 있고, 08-20 도로명 실측은 `04-source-data.md` 부록에 있습니다.
