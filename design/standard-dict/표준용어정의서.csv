@@ -88,10 +88,6 @@ svc,svc.result,정제결과,,사유코드,rsn_cd,코드V30,varchar(30),사유 + 
 svc,svc.result_dropped,버린조각,PK,요청식별자,dmnd_idntfr,식별자N,bigint,요청 + 식별자,표준단어 조합
 svc,svc.result_dropped,버린조각,PK,버린조각순번,unsd_tkn_sn,순번N,smallint,미사용 + 토큰 + 일련번호,표준단어 조합
 svc,svc.result_dropped,버린조각,,버린조각값,unsd_tkn,내용T,text,미사용 + 토큰,표준단어 조합
-svc,svc.legacy_map,옛주소대응,PK,옛표기,bfr_mark,명V200,varchar(200),전 + 표기,표준단어 조합
-svc,svc.legacy_map,옛주소대응,PK,도로명주소관리번호,road_nm_addr_mng_no,번호V26,varchar(26),도로 + 명 + 주소 + 관리 + 번호,표준단어 조합
-svc,svc.legacy_map,옛주소대응,,규명출처,idnty_src,구분V1,varchar(1),확인 + 출처,표준단어 조합
-svc,svc.legacy_map,옛주소대응,,규명일시,idnty_dt,일시D,timestamptz,확인 + 일시,표준단어 조합
 ref,ref.name_map,이름대응,PK,단계,stp,수N,smallint,단계,표준단어 조합
 ref,ref.name_map,이름대응,PK,전명,bfr_nm,명V80,varchar(80),전 + 명,표준단어 조합
 ref,ref.name_map,이름대응,PK,대응코드,crsp_cd,코드V12,varchar(12),대응 + 코드,표준단어 조합

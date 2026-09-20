@@ -113,18 +113,13 @@ TABLES = {'region': ('region · 행정구역',
                ('crsp_cd', 'varchar(12)', 'PK', '법정동코드 또는 도로명코드'),
                ('now_nm', 'varchar(80)', '', 'NOT NULL · 현재 이름'),
                ('obsrvn_ymd', 'date', '', 'NOT NULL · 처음 견준 날'),
-               ('crt_src', 'varchar(1)', '', 'B 배치비교 P 과거연동 E 외부조회')]),
+               ('crt_src', 'varchar(1)', '', 'B 배치비교 P 과거연동')]),
  'addr_map': ('addr_map · 주소대응',
               [('bfr_road_nm_addr_mng_no', 'varchar(26)', 'PK', '옛 등록주소'),
                ('now_road_nm_addr_mng_no', 'varchar(26)', '', 'NOT NULL · 현재 등록주소'),
                ('bldg_mng_no', 'varchar(25)', '', 'NOT NULL · 이어 준 키'),
                ('obsrvn_ymd', 'date', '', 'NOT NULL'),
-               ('crt_src', 'varchar(1)', '', 'B 배치비교 P 과거연동 E 외부조회')]),
- 'legacy_map': ('legacy_map · 옛주소대응',
-                [('bfr_mark', 'varchar(200)', 'PK', '옛표기'),
-                 ('road_nm_addr_mng_no', 'varchar(26)', 'PK', '제약 없음'),
-                 ('idnty_src', 'varchar(1)', '', '외부조회 · 내부판정'),
-                 ('idnty_dt', 'timestamptz', '', 'DEFAULT now()')])}
+               ('crt_src', 'varchar(1)', '', 'B 배치비교 P 과거연동')])}
 
 SCHEMA = {'region': 'ref',
  'road': 'ref',
@@ -140,7 +135,6 @@ SCHEMA = {'region': 'ref',
  'request': 'svc',
  'result': 'svc',
  'result_dropped': 'svc',
- 'legacy_map': 'svc',
  'name_map': 'ref',
  'addr_map': 'ref'}
 
@@ -158,7 +152,6 @@ LOGICAL_TBL = {'region': '행정구역',
  'request': '정제요청',
  'result': '정제결과',
  'result_dropped': '버린조각',
- 'legacy_map': '옛주소대응',
  'name_map': '이름대응',
  'addr_map': '주소대응'}
 
@@ -235,10 +228,6 @@ LOGICAL = {'region': {'stdg_cd': '법정동코드', 'up_stdg_cd': '상위법정�
             'daddr_jgmt': '상세판정',
             'rsn_cd': '사유코드'},
  'result_dropped': {'dmnd_idntfr': '요청식별자', 'unsd_tkn_sn': '버린조각순번', 'unsd_tkn': '버린조각값'},
- 'legacy_map': {'bfr_mark': '옛표기',
-                'road_nm_addr_mng_no': '도로명주소관리번호',
-                'idnty_src': '규명출처',
-                'idnty_dt': '규명일시'},
  'name_map': {'stp': '단계', 'bfr_nm': '전명', 'crsp_cd': '대응코드',
               'now_nm': '현재명', 'obsrvn_ymd': '관측일자', 'crt_src': '생성출처'},
  'addr_map': {'bfr_road_nm_addr_mng_no': '전도로명주소관리번호',
@@ -256,7 +245,7 @@ POS = {
     "unit": (1720, 520), "road": (40, 560), "road_emd": (600, 560),
     "token": (40, 760),
     "config": (40, 1000), "request": (600, 1000), "result": (1160, 1000),
-    "result_dropped": (1720, 1000), "legacy_map": (40, 1200),
+    "result_dropped": (1720, 1000),
     "name_map": (40, 1400), "addr_map": (1720, 1250),
 }
 
@@ -286,8 +275,6 @@ EDGES = [
      "E", "W", 1660),
     ("config", "stng_idntfr", "request", "stng_idntfr", "nonid", "one", "E", "W", 500),
     ("result", "bldg_mng_no", "building", "bldg_mng_no", "loose", "zero", "W", "W", 1100),
-    ("legacy_map", "road_nm_addr_mng_no", "address", "road_nm_addr_mng_no",
-     "loose", "zero", "E", "W", 480),
 
     ("region", "stdg_cd", "name_map", "crsp_cd", "loose", "zero", "W", "W", -60),
     ("road", "road_nm_cd", "name_map", "crsp_cd", "loose", "zero", "W", "W", -110),

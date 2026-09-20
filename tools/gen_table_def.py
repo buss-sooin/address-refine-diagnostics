@@ -16,7 +16,6 @@ NOTE = {
  ('svc.result','cfmtn_blk'): '값 복사. 상세위치를 참조하지 않는다',
  ('svc.result','cfmtn_flr'): '값 복사',
  ('svc.result','cfmtn_ho'): '값 복사',
- ('svc.legacy_map','idnty_dt'): 'DEFAULT now()',
  ('svc.request','orgnl_dmnd'): '감사 기록. 조회하지 않는다',
  ('svc.load_run','excn_rslt'): '시작할 때 「도는중」으로 넣고 끝날 때 갱신한다',
  ('svc.load_file','ctpv_nm'): '전국 파일 한 세트면 빈다',

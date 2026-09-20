@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <mxCell id="title" value="주소정제 솔루션 — 컴포넌트 UML    정제 코어 안쪽 · 모듈 스물하나 · 바깥 여덟" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1B2A4A;" vertex="1" parent="1">
+        <mxCell id="title" value="주소정제 솔루션 — 컴포넌트 UML    정제 코어 안쪽 · 모듈 20개 · 바깥 6개" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1B2A4A;" vertex="1" parent="1">
           <mxGeometry x="40" y="-70" width="1100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="legend" value="읽는 법&#10;· 화살표는 부르는 방향이고, 이름표는 돌려주는 값이다&#10;· 실선 = 호출 &#160;·&#160; 파선 = 구현하거나 채워 두는 길&#10;· 사각형 = 모듈 &#160;·&#160; 파선 사각형 = 인터페이스 &#160;·&#160; 원통 = 저장소 &#160;·&#160; 평행사변형 = 바깥과 닿는 자리&#10;· 번호 ①~⑧은 정제 오케스트레이터가 부르는 차례다. 순서를 아는 자리는 여기 하나뿐이다&#10;· 옅은 파랑 상자는 포트다. 코어는 인터페이스만 알고 구현은 바깥에서 꽂는다" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1">
@@ -106,11 +106,8 @@
         <mxCell id="t3" value="설정 포트" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#2B4C8C;fontColor=#2B4C8C;fontSize=12;" vertex="1" parent="1">
           <mxGeometry x="1380" y="720" width="200" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="t4" value="옛주소 조회 포트 &#160;[미착수]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#2B4C8C;fontColor=#2B4C8C;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="420" y="1000" width="280" height="52" as="geometry" />
-        </mxCell>
 
-        <mxCell id="x1" value="메모리 상주 사전 넷" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=8;whiteSpace=wrap;html=1;fillColor=#F4F4F4;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+        <mxCell id="x1" value="메모리 상주 사전 5개" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=8;whiteSpace=wrap;html=1;fillColor=#F4F4F4;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
           <mxGeometry x="1680" y="556" width="220" height="60" as="geometry" />
         </mxCell>
         <mxCell id="x2" value="엔진 DB · ref" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=8;whiteSpace=wrap;html=1;fillColor=#F4F4F4;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
@@ -118,12 +115,6 @@
         </mxCell>
         <mxCell id="x3" value="svc.config" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=8;whiteSpace=wrap;html=1;fillColor=#F4F4F4;strokeColor=#8A8A8A;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
           <mxGeometry x="1680" y="716" width="220" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="x4" value="어댑터 — 갈아끼우는 자리" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDF8EE;strokeColor=#8A6A2B;fontColor=#8A6A2B;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="420" y="1140" width="280" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="x5" value="카카오 검색 API" style="shape=parallelogram;perimeter=parallelogramPerimeter;fixedSize=1;size=16;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2B;fontSize=12;fontColor=#8A6A2B;" vertex="1" parent="1">
-          <mxGeometry x="440" y="1225" width="240" height="44" as="geometry" />
         </mxCell>
 
         <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="req" target="apiC">
@@ -228,11 +219,6 @@
             <Array as="points"><mxPoint x="1480" y="920" /></Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="r5" value="실재 확인 실패 → 옛주소인가 &#160;[미착수]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;strokeColor=#2B4C8C;strokeWidth=1.5;endArrow=block;endFill=1;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="orch" target="t4">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points"><mxPoint x="210" y="1026" /></Array>
-          </mxGeometry>
-        </mxCell>
 
         <mxCell id="q1" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2B4C8C;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="t1" target="x1">
           <mxGeometry relative="1" as="geometry" />
@@ -241,12 +227,6 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="q3" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2B4C8C;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#2B4C8C;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="t3" target="x3">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="q4" value="«구현»" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8A6A2B;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=block;endFill=0;fontSize=11;fontColor=#8A6A2B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="t4" target="x4">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="q5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8A6A2B;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="x4" target="x5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="q6" value="기동 시 적재" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8A8A8A;strokeWidth=1;dashed=1;dashPattern=6 4;endArrow=open;fontSize=11;fontColor=#666666;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="x2" target="x1">

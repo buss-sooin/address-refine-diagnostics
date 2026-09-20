@@ -21,10 +21,6 @@ svc.result,정제결과,8,사유코드,rsn_cd,varchar(30),,,,
 svc.result_dropped,버린조각,1,요청식별자,dmnd_idntfr,bigint,PK · FK,svc.result,필수,
 svc.result_dropped,버린조각,2,버린조각순번,unsd_tkn_sn,smallint,PK,,필수,
 svc.result_dropped,버린조각,3,버린조각값,unsd_tkn,text,,,,NOT NULL
-svc.legacy_map,옛주소대응,1,옛표기,bfr_mark,varchar(200),PK,,필수,
-svc.legacy_map,옛주소대응,2,도로명주소관리번호,road_nm_addr_mng_no,varchar(26),PK,,필수,
-svc.legacy_map,옛주소대응,3,규명출처,idnty_src,varchar(1),,,,
-svc.legacy_map,옛주소대응,4,규명일시,idnty_dt,timestamptz,,,,DEFAULT now()
 svc.load_run,적재실행,1,적재실행식별자,load_excn_idntfr,bigint,PK,,필수,
 svc.load_run,적재실행,2,배치구분,btch_se,varchar(1),,,,
 svc.load_run,적재실행,3,자료연월,data_ym,varchar(6),,,,

@@ -4,7 +4,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" value="주소정제 솔루션 — 물리 ERD    PostgreSQL · 테이블 열일곱 · 관계 스물하나" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1B2A4A;" vertex="1" parent="1">
+        <mxCell id="title" value="주소정제 솔루션 — 물리 ERD    PostgreSQL · 테이블 18개 · 관계 21개" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1B2A4A;" vertex="1" parent="1">
           <mxGeometry x="40" y="-40" width="900" height="40" as="geometry" />
         </mxCell>
         <mxCell id="legend" value="읽는 법 &#10;굵은 실선 = 식별 관계 &#160;·&#160; 점선 = 비식별 관계 &#160;·&#160; 회색 잔점선 = 제약 없는 참조&#10;선은 외래키 제약을 뜻하지 않는다. svc 안쪽 셋만 실제 제약이다&#10;한 줄은 PK · 논리명 · 물리명 · 자료형 넷이다" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#444444;whiteSpace=wrap;" vertex="1" parent="1">
@@ -1387,69 +1387,6 @@
         <mxCell id="result_dropped_r3c4" value="text" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#888888;" vertex="1" parent="result_dropped_r3">
           <mxGeometry x="310" width="90" height="26" as="geometry"><mxRectangle width="90" height="26" as="alternateBounds" /></mxGeometry>
         </mxCell>
-        <mxCell id="legacy_map" value="svc.legacy_map · 옛주소대응" style="shape=table;startSize=32;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;columnLines=1;html=1;whiteSpace=wrap;align=center;fontStyle=1;fontSize=13;resizeLast=1;fillColor=#8A6A2B;fontColor=#FFFFFF;strokeColor=#8A6A2B;" vertex="1" parent="1">
-          <mxGeometry x="40" y="1200" width="400" height="136" as="geometry" />
-        </mxCell>
-        <mxCell id="legacy_map_r1" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="legacy_map">
-          <mxGeometry y="32" width="400" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="legacy_map_r1c1" value="PK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=center;spacingLeft=4;spacingRight=4;fontSize=11;fontColor=#2B4C8C;fontStyle=1;" vertex="1" parent="legacy_map_r1">
-          <mxGeometry x="0" width="30" height="26" as="geometry"><mxRectangle width="30" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r1c2" value="옛표기" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontStyle=1;" vertex="1" parent="legacy_map_r1">
-          <mxGeometry x="30" width="132" height="26" as="geometry"><mxRectangle width="132" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r1c3" value="bfr_mark" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#333333;" vertex="1" parent="legacy_map_r1">
-          <mxGeometry x="162" width="148" height="26" as="geometry"><mxRectangle width="148" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r1c4" value="varchar(200)" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#888888;" vertex="1" parent="legacy_map_r1">
-          <mxGeometry x="310" width="90" height="26" as="geometry"><mxRectangle width="90" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r2" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="legacy_map">
-          <mxGeometry y="58" width="400" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="legacy_map_r2c1" value="PK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=center;spacingLeft=4;spacingRight=4;fontSize=11;fontColor=#2B4C8C;fontStyle=1;" vertex="1" parent="legacy_map_r2">
-          <mxGeometry x="0" width="30" height="26" as="geometry"><mxRectangle width="30" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r2c2" value="도로명주소관리번호" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontStyle=1;" vertex="1" parent="legacy_map_r2">
-          <mxGeometry x="30" width="132" height="26" as="geometry"><mxRectangle width="132" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r2c3" value="road_nm_addr_mng_no" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#333333;" vertex="1" parent="legacy_map_r2">
-          <mxGeometry x="162" width="148" height="26" as="geometry"><mxRectangle width="148" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r2c4" value="varchar(26)" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#888888;" vertex="1" parent="legacy_map_r2">
-          <mxGeometry x="310" width="90" height="26" as="geometry"><mxRectangle width="90" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r3" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="legacy_map">
-          <mxGeometry y="84" width="400" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="legacy_map_r3c1" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=center;spacingLeft=4;spacingRight=4;fontSize=11;fontColor=#2B4C8C;fontStyle=1;" vertex="1" parent="legacy_map_r3">
-          <mxGeometry x="0" width="30" height="26" as="geometry"><mxRectangle width="30" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r3c2" value="규명출처" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;" vertex="1" parent="legacy_map_r3">
-          <mxGeometry x="30" width="132" height="26" as="geometry"><mxRectangle width="132" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r3c3" value="idnty_src" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#333333;" vertex="1" parent="legacy_map_r3">
-          <mxGeometry x="162" width="148" height="26" as="geometry"><mxRectangle width="148" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r3c4" value="varchar(1)" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#888888;" vertex="1" parent="legacy_map_r3">
-          <mxGeometry x="310" width="90" height="26" as="geometry"><mxRectangle width="90" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r4" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="legacy_map">
-          <mxGeometry y="110" width="400" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="legacy_map_r4c1" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=center;spacingLeft=4;spacingRight=4;fontSize=11;fontColor=#2B4C8C;fontStyle=1;" vertex="1" parent="legacy_map_r4">
-          <mxGeometry x="0" width="30" height="26" as="geometry"><mxRectangle width="30" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r4c2" value="규명일시" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;" vertex="1" parent="legacy_map_r4">
-          <mxGeometry x="30" width="132" height="26" as="geometry"><mxRectangle width="132" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r4c3" value="idnty_dt" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#333333;" vertex="1" parent="legacy_map_r4">
-          <mxGeometry x="162" width="148" height="26" as="geometry"><mxRectangle width="148" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
-        <mxCell id="legacy_map_r4c4" value="timestamptz" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;whiteSpace=wrap;html=1;align=left;spacingLeft=6;spacingRight=4;fontSize=11;fontColor=#888888;" vertex="1" parent="legacy_map_r4">
-          <mxGeometry x="310" width="90" height="26" as="geometry"><mxRectangle width="90" height="26" as="alternateBounds" /></mxGeometry>
-        </mxCell>
         <mxCell id="name_map" value="ref.name_map · 이름대응" style="shape=table;startSize=32;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;columnLines=1;html=1;whiteSpace=wrap;align=center;fontStyle=1;fontSize=13;resizeLast=1;fillColor=#1B2A4A;fontColor=#FFFFFF;strokeColor=#1B2A4A;" vertex="1" parent="1">
           <mxGeometry x="40" y="1400" width="400" height="188" as="geometry" />
         </mxCell>
@@ -1980,14 +1917,6 @@
             <Array as="points">
               <mxPoint x="1100" y="1071" />
               <mxPoint x="1100" y="395" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERzeroToOne;startFill=0;endArrow=ERmany;endFill=0;strokeColor=#8A8A8A;strokeWidth=1;dashed=1;dashPattern=2 4;" edge="1" parent="1" source="legacy_map_r2" target="address_r1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="480" y="1271" />
-              <mxPoint x="480" y="295" />
             </Array>
           </mxGeometry>
         </mxCell>
