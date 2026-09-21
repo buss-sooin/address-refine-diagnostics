@@ -20,7 +20,7 @@
 | 인터페이스 15개와 책임 | `design/07-interface.md` 4절 |
 | 구조 검사 규칙 8가지 | `design/07-interface.md` 6절 |
 | 적재 순서와 갱신 흐름 | `design/04-source-data.md` 8절 |
-| 기대 정제 값 케이스 | `design/05-expected-results.md` 5절 |
+| 기대 정제 값 케이스 | `design/05-expected-results.md` 4절 |
 | 업무 용어 | `design/01-scope.md` 0절 |
 | 물리명 (테이블·칼럼) | `design/standard-dict/표준용어정의서.csv` |
 | 사유코드 17개 | `design/standard-dict/사유코드정의서.csv` |
