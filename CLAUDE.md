@@ -23,7 +23,7 @@
 | 기대 정제 값 케이스 | `design/05-expected-results.md` 4절 |
 | 업무 용어 | `design/01-scope.md` 0절 |
 | 물리명 (테이블·칼럼) | `design/standard-dict/표준용어정의서.csv` |
-| 사유코드 17개 | `design/standard-dict/사유코드정의서.csv` |
+| 사유코드 18개 | `design/standard-dict/사유코드정의서.csv` |
 
 `04-source-data.md`와 `06-source-schema.md`는 분량이 많습니다. 전체를 읽지 말고 필요한 절만 읽습니다.
 
