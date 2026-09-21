@@ -11,6 +11,9 @@ __pycache__/
 *.pyc
 
 # ── 빌드 산출물 ──────────────────────────────────────────────
-target/
+build/
+.gradle/
 *.class
 *.jar
+# Gradle 래퍼 jar는 저장소에 넣어야 래퍼가 동작합니다
+!gradle/wrapper/gradle-wrapper.jar

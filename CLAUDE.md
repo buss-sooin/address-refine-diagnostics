@@ -55,7 +55,8 @@
 
 ```
 address-refine-diagnostics/
-  pom.xml         부모 POM. 버전 번호와 공통 설정만 담습니다
+  settings.gradle.kts  빌드 단위 3개를 묶습니다
+  build.gradle.kts     부모 빌드 스크립트. 버전 번호와 공통 설정만 담습니다
   db-gen/         원천 파일을 읽어 엔진 자료를 만드는 배치입니다
   refine-core/    정제 로직 전체. 단계 모듈 8개, RefineOrchestrator, 자원 포트 인터페이스
   refine-api/     교정·검출 진입점과 ResponseStrategy 구현. 실행되는 Spring Boot 앱입니다
@@ -67,11 +68,11 @@ address-refine-diagnostics/
 | `refine-core` | Spring Boot 기본 의존성만 | `design/07-interface.md` 2절 원칙 4 |
 | `refine-api` | `refine-core` | `design/01-scope.md` 6-4절 |
 
-**`refine-core`의 `pom.xml`에 외부 서비스 라이브러리를 넣지 않습니다.** 카카오나 T맵을 쓰는 코드가 생기면 `provider-*` 또는 `adapter-*` 빌드 단위를 새로 만들고 그 단위가 `refine-core`를 의존하게 합니다. 의존 방향이 반대가 되면 코어가 카카오에 의존하지 않는지 검사하는 규칙이 뜻을 잃습니다.
+**`refine-core`의 `build.gradle.kts`에 외부 서비스 라이브러리를 넣지 않습니다.** 카카오나 T맵을 쓰는 코드가 생기면 `provider-*` 또는 `adapter-*` 빌드 단위를 새로 만들고 그 단위가 `refine-core`를 의존하게 합니다. 의존 방향이 반대가 되면 코어가 카카오에 의존하지 않는지 검사하는 규칙이 뜻을 잃습니다.
 
 확장용 빌드 단위는 구현이 생기는 날 만듭니다. 빈 단위를 미리 만들지 않습니다.
 
-「모듈」과 「빌드 단위」를 구분해 씁니다. 모듈은 `AddressParser`처럼 정제 흐름을 구성하는 처리 단위이고, 빌드 단위는 `refine-core`처럼 `pom.xml`을 하나 가진 폴더입니다.
+「모듈」과 「빌드 단위」를 구분해 씁니다. 모듈은 `AddressParser`처럼 정제 흐름을 구성하는 처리 단위이고, 빌드 단위는 `refine-core`처럼 `build.gradle.kts`를 하나 가진 폴더입니다.
 
 ---
 
@@ -80,12 +81,12 @@ address-refine-diagnostics/
 | 대상 | 값 |
 |---|---|
 | 자바 | 21 LTS |
-| 빌드 도구 | Maven 3.9.x |
+| 빌드 도구 | Gradle 9.7.x. Kotlin DSL이고 래퍼(`./gradlew`)로 실행합니다 |
 | Spring Boot | 4.1.x |
 | DB | PostgreSQL 18 |
-| Maven 좌표 | `com.address.refine.diagnostics` · `0.1.0-SNAPSHOT` |
+| 그룹과 버전 | `com.address.refine.diagnostics` · `0.1.0-SNAPSHOT` |
 
-자바 패키지는 Maven 좌표를 루트로 삼아 나눕니다. 이 값들을 바꾸자고 먼저 제안하지 않습니다.
+자바 패키지는 그룹 이름을 루트로 삼아 나눕니다. 이 값들을 바꾸자고 먼저 제안하지 않습니다.
 
 ---
 
@@ -93,15 +94,17 @@ address-refine-diagnostics/
 
 | 목적 | 명령 | 실행 시점 |
 |---|---|---|
-| 수정한 빌드 단위만 컴파일 | `mvn -o -pl <빌드 단위> compile` | 파일을 수정한 직후 |
-| 구조 검사 8가지 | `mvn -o -pl refine-core test -Dtest='Arch*Test'` | 작업을 마칠 때 |
-| 전체 빌드와 테스트 | `mvn -o clean verify` | 커밋하기 전 |
+| 수정한 빌드 단위만 컴파일 | `./gradlew --offline :<빌드 단위>:compileJava` | 파일을 수정한 직후 |
+| 구조 검사 8가지 | `./gradlew --offline :refine-core:test --tests 'Arch*Test'` | 작업을 마칠 때 |
+| 전체 빌드와 테스트 | `./gradlew --offline clean build` | 커밋하기 전 |
 
-`-o`는 오프라인 모드입니다. Maven은 호출마다 JVM을 새로 띄우므로 이 옵션 하나로 실행 시간이 달라집니다. 의존성을 바꾼 뒤 처음 한 번은 `-o` 없이 실행해 내려받습니다.
+`--offline`은 의존성을 내려받지 않고 캐시만 씁니다. 의존성을 바꾼 뒤 처음 한 번은 `--offline` 없이 실행해 내려받습니다. Gradle은 데몬이 JVM을 띄워 둔 채 재사용하므로 두 번째 호출부터 빨라집니다.
+
+`mvn`이나 전역 `gradle` 명령을 쓰지 않습니다. 저장소의 래퍼가 정해 둔 Gradle 버전으로만 실행합니다.
 
 **ArchUnit을 파일마다 실행하지 않습니다.** 모든 클래스를 훑는 검사라 느립니다. 수정 직후에는 컴파일만 보고 구조 검사는 작업을 마친 뒤에 실행합니다.
 
-ArchUnit 테스트는 아직 없습니다. 그동안 구조 검사 명령은 테스트를 하나도 찾지 못한 채 통과합니다.
+ArchUnit 테스트는 아직 없습니다. 그동안 구조 검사 명령은 「No tests found」로 실패합니다. 이 실패는 테스트가 없다는 뜻이지 규칙 위반이 아닙니다.
 
 `tools/`의 생성기 4개는 이 저장소에서 실행되지 않습니다. 입력으로 쓰는 `reference/` 폴더가 여기 없습니다. 표준 사전을 다시 만들어야 하면 작업장에서 실행하고 결과 파일만 옮겨 옵니다.
 
