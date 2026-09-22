@@ -6,21 +6,27 @@ svc.config,설정,4,페이지크기,page_sz,smallint,,,,
 svc.config,설정,5,적용일시,aply_dt,timestamptz,,,,
 svc.request,정제요청,1,요청식별자,dmnd_idntfr,bigint,PK,,필수,
 svc.request,정제요청,2,주소값,addr_vl,text,,,,
-svc.request,정제요청,3,원본요청,orgnl_dmnd,jsonb,,,,감사 기록. 조회하지 않는다
-svc.request,정제요청,4,전략구분,strtg_se,varchar(1),,,,
-svc.request,정제요청,5,설정식별자,stng_idntfr,bigint,FK,svc.config,,
-svc.request,정제요청,6,접수일시,rcpt_dt,timestamptz,,,,
+svc.request,정제요청,3,우편번호값,zip_vl,text,,,,들어온 그대로 적는다
+svc.request,정제요청,4,원본요청,orgnl_dmnd,jsonb,,,,감사 기록. 조회하지 않는다
+svc.request,정제요청,5,전략구분,strtg_se,varchar(1),,,,
+svc.request,정제요청,6,설정식별자,stng_idntfr,bigint,FK,svc.config,,
+svc.request,정제요청,7,적재실행식별자,load_excn_idntfr,bigint,FK,svc.load_run,,상주 사전을 마지막으로 갈아 끼운 적재실행. 재현에 쓴다
+svc.request,정제요청,8,접수일시,rcpt_dt,timestamptz,,,,
 svc.result,정제결과,1,요청식별자,dmnd_idntfr,bigint,PK · FK,svc.request,필수,
-svc.result,정제결과,2,건물관리번호,bldg_mng_no,varchar(25),,,,
-svc.result,정제결과,3,확정동,cfmtn_blk,varchar(50),,,,값 복사. 상세위치를 참조하지 않는다
-svc.result,정제결과,4,확정층,cfmtn_flr,varchar(50),,,,값 복사
-svc.result,정제결과,5,확정호,cfmtn_ho,varchar(50),,,,값 복사
-svc.result,정제결과,6,건물판정,bldg_jgmt,varchar(1),,,,
-svc.result,정제결과,7,상세판정,daddr_jgmt,varchar(1),,,,
-svc.result,정제결과,8,사유코드,rsn_cd,varchar(30),,,,
-svc.result_dropped,버린조각,1,요청식별자,dmnd_idntfr,bigint,PK · FK,svc.result,필수,
-svc.result_dropped,버린조각,2,버린조각순번,unsd_tkn_sn,smallint,PK,,필수,
-svc.result_dropped,버린조각,3,버린조각값,unsd_tkn,text,,,,NOT NULL
+svc.result,정제결과,2,건물관리번호,bldg_mng_no,varchar(25),,,,확정 건물. 확정하지 못하면 빈다
+svc.result,정제결과,3,확정주소,cfmtn_addr,text,,,,값 복사. 돌려준 주소 텍스트
+svc.result,정제결과,4,확정우편번호,cfmtn_zip,varchar(5),,,,값 복사
+svc.result,정제결과,5,확정동,cfmtn_blk,varchar(50),,,,값 복사. 상세위치를 참조하지 않는다
+svc.result,정제결과,6,확정층,cfmtn_flr,varchar(50),,,,값 복사
+svc.result,정제결과,7,확정호,cfmtn_ho,varchar(50),,,,값 복사
+svc.result,정제결과,8,건물판정,bldg_jgmt,varchar(1),,,,
+svc.result,정제결과,9,상세판정,daddr_jgmt,varchar(1),,,,
+svc.result,정제결과,10,후보건수,cand_nocs,integer,,,,ExistenceVerifier를 통과한 건물 후보 수. 후보 목록은 남기지 않는다
+svc.result_reason,정제사유,1,요청식별자,dmnd_idntfr,bigint,PK · FK,svc.result,필수,
+svc.result_reason,정제사유,2,사유순번,rsn_sn,smallint,PK,,필수,
+svc.result_reason,정제사유,3,사유코드,rsn_cd,varchar(30),,,필수,
+svc.result_reason,정제사유,4,원본값,orgnl_vl,text,,,,버린 조각이나 고치기 전 원문
+svc.result_reason,정제사유,5,결과값,rslt_vl,text,,,,채우거나 고친 값
 svc.load_run,적재실행,1,적재실행식별자,load_excn_idntfr,bigint,PK,,필수,
 svc.load_run,적재실행,2,배치구분,btch_se,varchar(1),,,,
 svc.load_run,적재실행,3,자료연월,data_ym,varchar(6),,,,

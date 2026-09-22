@@ -73,21 +73,27 @@ svc,svc.config,설정,,페이지크기,page_sz,수N,smallint,쪽 + 크기,표준
 svc,svc.config,설정,,적용일시,aply_dt,일시D,timestamptz,신청 + 일시,공통표준용어
 svc,svc.request,정제요청,PK,요청식별자,dmnd_idntfr,식별자N,bigint,요청 + 식별자,표준단어 조합
 svc,svc.request,정제요청,,주소값,addr_vl,내용T,text,주소 + 값,표준단어 조합
+svc,svc.request,정제요청,,우편번호값,zip_vl,내용T,text,우편번호 + 값,표준단어 조합
 svc,svc.request,정제요청,,원본요청,orgnl_dmnd,문서J,jsonb,원본 + 요청,표준단어 조합
 svc,svc.request,정제요청,,전략구분,strtg_se,구분V1,varchar(1),전략 + 구분,표준단어 조합
 svc,svc.request,정제요청,FK,설정식별자,stng_idntfr,식별자N,bigint,설정 + 식별자,표준단어 조합
+svc,svc.request,정제요청,FK,적재실행식별자,load_excn_idntfr,식별자N,bigint,적재 + 실행 + 식별자,표준단어 조합
 svc,svc.request,정제요청,,접수일시,rcpt_dt,일시D,timestamptz,접수 + 일시,공통표준용어
 svc,svc.result,정제결과,PK,요청식별자,dmnd_idntfr,식별자N,bigint,요청 + 식별자,표준단어 조합
 svc,svc.result,정제결과,,건물관리번호,bldg_mng_no,번호V25,varchar(25),건물 + 관리 + 번호,공통표준용어
+svc,svc.result,정제결과,,확정주소,cfmtn_addr,내용T,text,확정 + 주소,표준단어 조합
+svc,svc.result,정제결과,,확정우편번호,cfmtn_zip,번호V5,varchar(5),확정 + 우편번호,표준단어 조합
 svc,svc.result,정제결과,,확정동,cfmtn_blk,명V50,varchar(50),확정 + 동(棟),표준단어 조합
 svc,svc.result,정제결과,,확정층,cfmtn_flr,명V50,varchar(50),확정 + 층,표준단어 조합
 svc,svc.result,정제결과,,확정호,cfmtn_ho,명V50,varchar(50),확정 + 호,표준단어 조합
 svc,svc.result,정제결과,,건물판정,bldg_jgmt,구분V1,varchar(1),건물 + 판정,표준단어 조합
 svc,svc.result,정제결과,,상세판정,daddr_jgmt,구분V1,varchar(1),상세주소 + 판정,표준단어 조합
-svc,svc.result,정제결과,,사유코드,rsn_cd,코드V30,varchar(30),사유 + 코드,표준단어 조합
-svc,svc.result_dropped,버린조각,PK,요청식별자,dmnd_idntfr,식별자N,bigint,요청 + 식별자,표준단어 조합
-svc,svc.result_dropped,버린조각,PK,버린조각순번,unsd_tkn_sn,순번N,smallint,미사용 + 토큰 + 일련번호,표준단어 조합
-svc,svc.result_dropped,버린조각,,버린조각값,unsd_tkn,내용T,text,미사용 + 토큰,표준단어 조합
+svc,svc.result,정제결과,,후보건수,cand_nocs,수N,integer,후보 + 건수,표준단어 조합
+svc,svc.result_reason,정제사유,PK,요청식별자,dmnd_idntfr,식별자N,bigint,요청 + 식별자,표준단어 조합
+svc,svc.result_reason,정제사유,PK,사유순번,rsn_sn,순번N,smallint,사유 + 일련번호,표준단어 조합
+svc,svc.result_reason,정제사유,,사유코드,rsn_cd,코드V30,varchar(30),사유 + 코드,표준단어 조합
+svc,svc.result_reason,정제사유,,원본값,orgnl_vl,내용T,text,원본 + 값,표준단어 조합
+svc,svc.result_reason,정제사유,,결과값,rslt_vl,내용T,text,결과 + 값,표준단어 조합
 ref,ref.name_map,이름대응,PK,단계,stp,수N,smallint,단계,표준단어 조합
 ref,ref.name_map,이름대응,PK,전명,bfr_nm,명V80,varchar(80),전 + 명,표준단어 조합
 ref,ref.name_map,이름대응,PK,대응코드,crsp_cd,코드V12,varchar(12),대응 + 코드,표준단어 조합
